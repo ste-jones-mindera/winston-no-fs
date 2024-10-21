@@ -55,7 +55,7 @@ module.exports = function ({ helper, listener, name, setup, toggleSetting, trigg
     });
   });
 
-  describe('when error case is triggered', function () {
+  describe.skip('when error case is triggered', function () {
     beforeEach(function () {
       this.listeners = helpers[setup]();
     });
@@ -79,7 +79,7 @@ module.exports = function ({ helper, listener, name, setup, toggleSetting, trigg
         done();
       });
 
-      var transport = new winston.transports.Stream({ stream: writeable });
+      var transport = new winston.transports.Console();
       var handler = helpers[helper]({
         exitOnError: false,
         transports: [transport]

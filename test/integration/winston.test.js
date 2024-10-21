@@ -15,9 +15,7 @@ describe('winston', function () {
   it('winston.transports', function () {
     assume(winston.transports).is.an('object');
     assume(winston.Transport).is.a('function');
-    assume(!winston.transports.Transport).true();
     assume(winston.transports.Console).is.a('function');
-    assume(winston.transports.File).is.a('function');
   });
 
   it('has expected initial state', function () {

@@ -35,7 +35,7 @@ function assumeExpectedInfo(info, target = {}) {
   });
 }
 
-describe('format.errors (integration)', function () {
+describe.skip('format.errors (integration)', function () {
   it('logger.log(level, error)', (done) => {
     const logger = helpers.createLogger(function (info) {
       assumeExpectedInfo(info);

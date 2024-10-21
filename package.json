@@ -1,14 +1,14 @@
 {
-  "name": "winston",
-  "description": "A logger for just about everything.",
-  "version": "3.15.0",
+  "name": "winston-no-fs",
+  "description": "A logger for just about everything",
+  "version": "0.0.1",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "maintainers": [
     "David Hyde <dabh@alumni.stanford.edu>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/winstonjs/winston.git"
+    "url": "https://github.com/ste-jones-mindera/winston-no-fs.git"
   },
   "keywords": [
     "winston",

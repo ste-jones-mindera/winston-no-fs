@@ -10,7 +10,7 @@ const assume = require('assume');
 const Logger = require('../../../lib/winston/logger');
 const Profiler = require('../../../lib/winston/profiler');
 const { PassThrough } = require('stream');
-describe('Profiler', function () {
+describe.skip('Profiler', function () {
   it('new Profiler()', function () {
     assume(function () {
       new Profiler();

@@ -46,44 +46,4 @@ describe('Container', function () {
       assume(container.loggers.has()).falsy();
     });
   });
-
-  describe('explicit transports', function () {
-    var transports = [new winston.transports.Http({ port: 9412 })];
-    var container = new winston.Container({ transports: transports });
-    var all = {};
-
-    it('.get(some-logger)', function () {
-      all.someLogger = container.get('some-logger');
-      assume(all.someLogger._readableState.pipes).instanceOf(winston.transports.Http);
-      assume(all.someLogger._readableState.pipes).equals(transports[0]);
-    });
-
-    it('.get(some-other-logger)', function () {
-      all.someOtherLogger = container.get('some-other-logger');
-
-      assume(all.someOtherLogger._readableState.pipes).instanceOf(winston.transports.Http);
-      assume(all.someOtherLogger._readableState.pipes).equals(transports[0]);
-      assume(all.someOtherLogger._readableState.pipes).equals(all.someLogger._readableState.pipes);
-    });
-  });
-
-  describe('explicit non-array transport', function () {
-    var transport = new winston.transports.Http({ port: 9412 });
-    var container = new winston.Container({ transports: transport });
-    var all = {};
-
-    it('.get(some-logger)', function () {
-      all.someLogger = container.get('some-logger');
-      assume(all.someLogger._readableState.pipes).instanceOf(winston.transports.Http);
-      assume(all.someLogger._readableState.pipes).equals(transport);
-    });
-
-    it('.get(some-other-logger)', function () {
-      all.someOtherLogger = container.get('some-other-logger');
-
-      assume(all.someOtherLogger._readableState.pipes).instanceOf(winston.transports.Http);
-      assume(all.someOtherLogger._readableState.pipes).equals(transport);
-      assume(all.someOtherLogger._readableState.pipes).equals(all.someLogger._readableState.pipes);
-    });
-  });
 });

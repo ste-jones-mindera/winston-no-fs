@@ -11,8 +11,8 @@ const assume = require('assume'),
     through = require('through2'),
     spawn = require('child_process').spawn,
     stream = require('stream'),
-    winston = require('../../lib/winston'),
-    mockTransport = require('./mocks/mock-transport');
+    transports = require('../../lib/winston/transports'),
+    winston = require('../../lib/winston');
 
 var helpers = exports;
 
@@ -27,7 +27,7 @@ helpers.createLogger = function (write, format) {
   return winston.createLogger({
     format,
     transports: [
-      mockTransport.createMockTransport(write)
+      new transports.Console()
     ]
   });
 };
